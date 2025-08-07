@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import itemStore from "/Microsoft VS Code/Work/StoreItem/Product/ItemStore.json"
+import itemStore from "/Product/ItemStore.json"
 import { useState } from 'react';
 export default function Tabel() {
   const [Product, setProduct] = useState([])
