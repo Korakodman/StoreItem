@@ -5,11 +5,20 @@ export default function Tabel() {
   const [Product, setProduct] = useState([])
   const [loading,setloading] = useState()
   const [update,setupdate] = useState("")
+   const [id,setid] = useState("")
+   const [itemlist,setitemlist] = useState([])
+   
  
 
-  const updateitem = itemStore.filter((item)=>
+ 
+  let updateitem = itemStore.filter((item)=>
   item.Name.toLowerCase().includes(update.toLowerCase())
 )
+     
+if(id){
+  updateitem = itemStore.filter((item)=>
+  item.id.toLowerCase().includes(id.toLowerCase())
+ )}
  const DialogRef = useRef() 
  const OpenDialog = (item) =>{
   DialogRef.current.showModal()
@@ -20,8 +29,10 @@ export default function Tabel() {
  }
   return (
   <div>
-     <div className=' bg-gray-400 p-2'>
-        <input value={update} onChange={(e)=>setupdate(e.target.value)} className='bg-gray-200 p-2 rounded-2xl' placeholder='ค้นหา' type='text'></input>
+     <div className=' bg-gray-400 p-2 top-0 sticky'>
+         <input value={id} onChange={(e)=>setid(e.target.value )} className='bg-gray-200 p-2 rounded-xl 
+         mb-2' placeholder='ID' type='text'></input>
+        <input value={update} onChange={(e)=>setupdate(e.target.value)} className='bg-gray-200 p-2 rounded-xl' placeholder='ค้นหา' type='text'></input>
       </div>
          <table className="md:min-w-full  bg-gray-800 text-white border border-gray-600 w-full">
         <thead>
@@ -33,8 +44,8 @@ export default function Tabel() {
 
           </tr>
         </thead>
-        <tbody >
-         {updateitem.map((item,index)=>{
+        <tbody>
+        {updateitem.map((item,index)=>{
           return <tr key={index} className='border-b border-gray-600'>
           <td >{item.id}</td>
           <td>{item.Name}</td>
