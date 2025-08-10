@@ -29,17 +29,19 @@ if(id){
  }
   return (
   <div>
-     <div className=' bg-gray-400 p-2 top-0 sticky'>
-         <input value={id} onChange={(e)=>setid(e.target.value )} className='bg-gray-200 p-2 rounded-xl 
+     <div className=' bg-gray-400 py-2 w-full top-0 sticky'>
+        <div>
+           <input value={id} onChange={(e)=>setid(e.target.value )} className='bg-gray-200 p-2 rounded-xl 
          mb-2' placeholder='ID' type='text'></input>
         <input value={update} onChange={(e)=>setupdate(e.target.value)} className='bg-gray-200 p-2 rounded-xl' placeholder='ค้นหา' type='text'></input>
+        </div>
       </div>
          <table className="md:min-w-full  bg-gray-800 text-white border border-gray-600 w-full">
         <thead>
           <tr className="border-b border-gray-600 md:text-lg  text-[12px]">
             <th className="p-2">ID</th>
             <th className="p-2">Name</th>
-            <th className='p-2'>จำนวน</th>
+            
             <th className='p2'>ตัวเลือก</th>
 
           </tr>
@@ -49,7 +51,7 @@ if(id){
           return <tr key={index} className='border-b border-gray-600'>
           <td >{item.id}</td>
           <td>{item.Name}</td>
-          <td>{item.total}</td>
+          
          <td> <button type='button' className=' bg-gray-200  text-black mt-2 mb-2 px-2 rounded-sm text-sm'
          onClick={()=>OpenDialog(item)}
          >รายละเอียด</button></td>
