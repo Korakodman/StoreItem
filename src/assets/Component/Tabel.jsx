@@ -6,7 +6,6 @@ export default function Tabel() {
   const [loading,setloading] = useState()
   const [update,setupdate] = useState("")
    const [id,setid] = useState("")
-   const [itemlist,setitemlist] = useState([])
    
  
 
@@ -67,6 +66,9 @@ if(id){
           <h1>รหัส: {Product.id}</h1>
         <h1>ชื่อสินค้า: {Product.Name}</h1>
         <h1>จำนวน: {Product.total}</h1></div>
+        <div className='flex justify-center'>
+          <div className=''><img src={Product.Picture} className=' w-1/2 '></img></div>
+        </div>
         <div><button className='bg-gray-400 px-2 rounded-md mt-5 hover:bg-gray-500' onClick={CloseDialog}>ปิด</button></div>
         </div>
       </dialog>
