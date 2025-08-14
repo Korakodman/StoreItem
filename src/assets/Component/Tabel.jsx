@@ -7,9 +7,6 @@ export default function Tabel() {
   const [update,setupdate] = useState("")
    const [id,setid] = useState("")
    
- 
-
- 
   let updateitem = itemStore.filter((item)=>
   item.Name.toLowerCase().includes(update.toLowerCase())
 )
@@ -26,7 +23,13 @@ if(id){
  const CloseDialog = () =>{
   DialogRef.current.close()
  }
+ const Closeout = (e) =>{
+   if(e.target === DialogRef.current){
+    CloseDialog()
+   }
+ }
   return (
+
   <div>
      <div className=' bg-gray-400 py-2 w-full top-0 sticky'>
         <div>
@@ -59,7 +62,7 @@ if(id){
          
         </tbody>
       </table>
-      <dialog ref={DialogRef} className=' fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+      <dialog ref={DialogRef} onClick={(e)=>Closeout(e)} className=' fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
              w-[400px] p-4 bg-white rounded-md shadow-lg border-4 border-blue-300'>
         <div className=''>
         <div >
