@@ -63,16 +63,17 @@ if(id){
         </tbody>
       </table>
       <dialog ref={DialogRef} onClick={(e)=>Closeout(e)} className=' fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-             w-[400px] p-4 bg-white rounded-md shadow-lg border-4 border-blue-300'>
+             w-[400px] p-4 bg-white rounded-md shadow-2xl  '>
         <div className=''>
-        <div >
-          <h1>รหัส: {Product.id}</h1>
+        <div className='font-bold tracking-wide' >
+          <h1 className=' '>รหัส: {Product.id}</h1>
         <h1>ชื่อสินค้า: {Product.Name}</h1>
-        <h1>จำนวน: {Product.total}</h1></div>
+      </div>
         <div className='flex justify-center'>
-          <div className=''><img src={Product.Picture} className=' w-1/2 '></img></div>
+          <div className='items-center p-2'>
+            <img src={Product.Picture} className=' w-[240px] h-[200px] '></img></div>
         </div>
-        <div><button className='bg-gray-400 px-2 rounded-md mt-5 hover:bg-gray-500' onClick={CloseDialog}>ปิด</button></div>
+        <div><button className='bg-gray-400 px-4 py-2 rounded-md mt-5 hover:bg-gray-500 font-bold ' onClick={CloseDialog}>ปิด</button></div>
         </div>
       </dialog>
       </div>
